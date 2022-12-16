@@ -51,6 +51,8 @@ function removeFromCart(event) {
   let button = event.target;
   button.parentElement.parentElement.remove();
   updateCartTotal();
+  let newBoxes = document.querySelectorAll(".cart-box");
+  cartCounter.innerText = newBoxes.length;
 };
 
 let quantityInputs = document.querySelectorAll(".cart-box .quantity");
@@ -59,7 +61,6 @@ for (let i = 0; i < quantityInputs.length; i++) {
   input.addEventListener("change", updateCartTotal);
 };
 function updateCartTotal() {
-  let cartItemContainer = document.querySelector(".shopping-cart");
   let cartBoxes = document.querySelectorAll(".cart-box");
   let total = 0;
   for (let i = 0; i < cartBoxes.length; i++) {
@@ -86,6 +87,8 @@ for (let i = 0; i < addBtns.length; i++) {
   addBtn.addEventListener("click", addNewCartBox);
 };
 
+let cartCounter = document.querySelector(".header .cart span");
+console.log(cartCounter);
 function addNewCartBox(event) {
   let addBtn = event.target;
   let productBox = addBtn.parentElement.parentElement.parentElement;
@@ -124,5 +127,7 @@ function addProductsToCart(imageSrc, title, price) {
   newBox.innerHTML = newBoxContent;
   newBox.querySelector(".cart-box .trash-icon").addEventListener("click", removeFromCart);
   newBox.querySelector(".cart-box .quantity").addEventListener("change", updateCartTotal);
+  let newBoxes = document.querySelectorAll(".cart-box");
+  cartCounter.innerText = newBoxes.length;
 }
 

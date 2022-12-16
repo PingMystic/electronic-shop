@@ -323,7 +323,7 @@ body {
   background-color: var(--main);
   color: white;
   border-radius: 50%;
-  padding: 0px 5px;
+  padding: 0px 6px;
   font-size: 12px;
   left: 11px;
   bottom: 12px;
@@ -612,7 +612,7 @@ body {
   background: url(images/parallax-bg.png) right center no-repeat;
   background-size: cover;
   margin: 100px 0;
-  background-position: 20px 30px;
+  background-position: 0px 30px;
 }
 .sale-container .text {
   padding: 100px 0;
